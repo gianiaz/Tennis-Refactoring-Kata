@@ -1,6 +1,5 @@
 *.class
 *.pyc
-.idea/workspace.xml
 /cpp/run.tests
 /ocaml/_build
 /ocaml/*.native
@@ -12,3 +11,5 @@ csharp/*.suo
 .DS_Store
 csharp/.vs
 .vs
+.idea
+php/composer.phar

@@ -35,15 +35,14 @@ class Board
 
     public function getScoreDescription():string {
 
-        if($this->player1->getScore() === $this->player2->getScore()) {
+        if($this->areTied()) {
             return $this->getTied();
         }
 
-        if($this->player1->getScore()>= 4 || $this->player2->getScore() >= 4) {
-
+        if($this->areInAdvantage()) {
             return $this->getAdvantage();
-
         }
+
 
         return $this->getDescriptionForScore($this->player1->getScore()).'-'.$this->getDescriptionForScore($this->player2->getScore());
 
@@ -89,4 +88,16 @@ class Board
 
     }
 
+    private function areTied():bool
+    {
+        return $this->player1->getScore() === $this->player2->getScore();
+    }
+
+    private function areInAdvantage():bool
+    {
+        return $this->player1->getScore() >= 4 || $this->player2->getScore() >= 4;
+    }
+
+
 }
+
